@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<style>
+    .new{
+        border-radius:5px;
+        background: #67809E
+;
+        margin:auto;
+        width: 80%;
+        padding: 30px;
+        box-shadow: 5px 10px 18px #0c453d;
+    }
+
+    .btn {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+      background-color: #f1f1f1;
+      color: #376196;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: center;
+      border-color: black;
+}
+    .btn:hover {
+      background-color: #67809E
+;
+      color: white;
+      border-color: white;
+    }
+
+</style>
+
+<div style="margin-top: 150px;">
+    <div class="new">
+            <h1 style="color:white;">{{announcement.title}}</h1>
+            <hr style="margin-bottom:24px;">
+            <div style="background-color: white; padding: 40px; border-radius: 5px;">
+                 <p>{{announcement.announcement_description|safe}}</p>
+            </div>
+            <hr style="margin-bottom:24px;">
+            <a class="btn" href="/announcements-list">АРТКА КАЙТУУ</a>
+    </div>
+</div>
+
+{% endblock %}

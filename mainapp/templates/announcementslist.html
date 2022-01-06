@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+    <section class="announcement"  id="announcement">
+	<div class="header__text"><h2  style="margin:0% 10% 2% 10%;
+			   font-family: 'Noto Serif', serif;
+			   text-align: center;
+			   font-weight:bold">
+		Кулактандыруу
+	</h2></div>
+	{% for announcement in all_announcements %}
+		<div class="container" style="margin:8% 10% 2% 10%;">
+			<a href="{{announcement.get_absolute_url}}" class="announcement__href">{{announcement.title}}</a> <br/>
+			</div>
+	{% endfor %}
+</section>
+{% endblock %}

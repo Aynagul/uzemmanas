@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+
+
+
+
+<section>
+<div class="container" style="position: relative; margin: 0 auto;">
+<img src="{% static 'images/manas.jpg' %}"
+			style="
+			margin-top: 105px;
+	        width: 100%;
+            max-height: 780px;
+            min-height: 350px;
+			background-position: center;">
+	<div class="text-block">
+    <h4 style="font-family: 'Noto Serif', serif; font-size:40px; text-align:center">Аралыктан окутуу</h4>
+    <p style="font-family: 'Noto Serif', serif; font-size:27px; text-align:center">Билим — адамдын канаты</p>
+  </div>
+</div>
+</section>
+
+
+<section class="questions">
+		<div class="container">
+			<div class="row">
+				<div class="header__text"><h2 style="margin: 20% 0 7% 0; font-size: 26px;">
+					Аралыкта окутууда такай берилүүчү суроолорго жооп
+				</h2></div>
+				{% for q in all_questions %}
+				<div >
+					<h3 style="margin:2% 10% 2% 10%;">{{q.question}}</h3>
+					<p style="margin:2% 11% 2% 11%;">{{q.answer|safe}}</p>
+					<a href="{{q.answer_file.url}}" class="btn btn-fill" target="_blank" download="{{q.answer_file.url}}">Download</a>
+				</div><!-- End col-md-12-->
+     		{% endfor %}
+			</div>
+		</div>
+</section>
+
+<section class="technical_support_tables" id="technical_support">
+		<div class="container-fluid">
+				<div class="header__text"><h2 style="margin: 20% 0 0 0;font-size: 26px;">
+					Техникалык жардамчылар
+				</h2></div>
+			<div class="support__tables" style="background-color: #a7a7ac; margin:3% 10% 2% 10%;">
+			<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>Факультет/Бөлүмү</th>
+							<th>Бөлүмү</th>
+							<th>Кызматкер</th>
+							<th>е-почта</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Гуманитардык факультет</td>
+							<td>Гуманитардык факультет</td>
+							<td>Доц.Др Таалайбек Абдиев</td>
+							<td>taalay.abdiev@manas.edu.kg</td>
+						</tr>
+
+						<tr>
+							<td>Маалымат технологиялар башкармалыгы</td>
+							<td>Маалымат технологиялар башкармалыгы</td>
+							<td>Жумагүл Нуракун кызы</td>
+							<td>jumagul@manas.edu.kg</td>
+						</tr>
+
+					</tbody>
+				</table>
+				</div>
+		</div>
+	</section>
+
+{% endblock %}
